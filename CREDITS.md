@@ -1,6 +1,6 @@
 # Asset and software credits
 
-NIVET ROYALE uses user-supplied character, bus, weapon and island inputs, converted to browser derivatives. New environment geometry, supplemental weapons, glider, procedural poses and synthesized sounds are original approximations. Grass, rock and oak-leaf material inputs were generated with AI assistance.
+NIVET ROYALE uses user-supplied character, bus, weapon and island inputs, converted to browser derivatives. New environment geometry, supplemental weapons, glider, procedural poses and synthesized sounds are original approximations. The current terrain uses grass, cliff, asphalt and concrete images extracted from the supplied OG_Tilted Blender file; the original generated material inputs remain bundled for legacy art. Runtime slope blending restores grass on flat terrain and cliff texture on steep faces.
 
 This work is based on [Plumgerman](https://sketchfab.com/3d-models/plumgerman-cb4822ae8d4946bd9b8375ac70f33385) by [Gh4xt3r](https://sketchfab.com/Gh4xt3r), licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). The derivative normalizes scale/orientation, caps textures and applies procedural gameplay poses. Other supplied model packages did not include licensing notices; original authorship was not established by the asset intake.
 
