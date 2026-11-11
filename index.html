@@ -13,8 +13,8 @@
       rel="icon"
       href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230c4ea1'/%3E%3Ctext x='11' y='48' font-family='Arial' font-weight='900' font-size='44' fill='%23ffe456'%3EN%3C/text%3E%3C/svg%3E"
     />
-    <script type="module" crossorigin src="./assets/index-gfRbGqJs.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-Qg9QqOcM.css">
+    <script type="module" crossorigin src="./assets/index-DHQnO7Be.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-TA7mmApo.css">
   </head>
   <body>
     <canvas id="game" aria-label="Nivet Royale 3D game"></canvas>
@@ -43,7 +43,7 @@
         <div class="mode-card">
           <span>01 / CLASSIC</span>
           <h2>SOLO BATTLE ROYALE</h2>
-          <p>You + 8 bots · Compact district</p>
+          <p>You + 11 bots · Three landing areas</p>
           <button id="play-solo" class="primary">LET’S DROP <b>→</b></button
           ><button id="play-practice" class="secondary">
             PRACTICE DISTRICT <small>Choose a starting point</small>
@@ -51,8 +51,8 @@
         </div>
       </div>
       <div class="lobby-location">
-        <span>THE DISTRICT</span><strong>TILTED TOWERS</strong>
-        <p>Every rooftop is an opportunity.</p>
+        <span>THE ISLAND</span><strong>TILTED TOWERS</strong>
+        <p>Retail Row · Lazy Links</p>
       </div>
       <footer>
         <span>SEASON 5 INSPIRED · COMPACT SOLO</span
@@ -74,8 +74,12 @@
       <div id="feed"></div>
       <div id="banner"></div>
       <div id="damage-vignette"></div>
-      <div id="reticle"><i></i><b>+</b></div>
+      <div id="reticle" aria-hidden="true">
+        <i></i><span></span><span></span><span></span><span></span>
+        <small id="pellet-count"></small>
+      </div>
       <div id="hit-marker">×</div>
+      <div id="hit-direction" aria-hidden="true"><i></i></div>
       <div id="damage-number"></div>
       <div id="scope" class="hidden"></div>
       <div id="wall-edit" class="hidden" aria-label="Wall edit grid"></div>
@@ -125,6 +129,12 @@
               <option value="low">Low · performance</option>
               <option value="medium">Medium · balanced</option>
               <option value="high">High · detail</option>
+            </select></label
+          ><label
+            >Bot difficulty<select id="difficulty">
+              <option value="easy">Easy</option>
+              <option value="normal">Normal</option>
+              <option value="hard">Hard</option>
             </select></label
           ><label
             >Mouse sensitivity<input
