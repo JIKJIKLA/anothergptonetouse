@@ -8,4 +8,6 @@ WASD moves. Mouse looks. Left click fires, uses the selected heal or places a bu
 
 The island uses the supplied location meshes and textures, with connected roads and traversable interiors. Selected roof and wall panels can be broken. Initial environment data is about 128 MB, and additional outfits load on selection. Matches run offline. [Credits](CREDITS.md).
 
+The three-POI release adds striped fairways and sand bunkers at Lazy Links, restores the clubhouse shingles, and corrects the terrain below the Retail Row Taco storefront. The assault rifle, pump and SMG have distinct handling, and the HUD shows when the reticle has recovered its accuracy.
+
 This directory contains the prebuilt client and its required runtime files. It requires no server, accounts or package installation. The editable Vite project and source archive are maintained separately.
