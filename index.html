@@ -13,8 +13,8 @@
       rel="icon"
       href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230c4ea1'/%3E%3Ctext x='11' y='48' font-family='Arial' font-weight='900' font-size='44' fill='%23ffe456'%3EN%3C/text%3E%3C/svg%3E"
     />
-    <script type="module" crossorigin src="./assets/index-CK-rF0ca.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-TA7mmApo.css">
+    <script type="module" crossorigin src="./assets/index-dcnFN-en.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-C4en84fn.css">
   </head>
   <body>
     <canvas id="game" aria-label="Nivet Royale 3D game"></canvas>
@@ -66,9 +66,54 @@
       <div class="match-info">
         <span id="location-label">TILTED TOWERS</span
         ><canvas id="minimap" width="210" height="210"></canvas>
-        <div>
-          <b id="storm-clock">◷ 1:00</b><span id="alive-count">♟ 16</span
-          ><span id="kill-count">◇ 0</span>
+        <div class="match-stats">
+          <span class="storm-stat" aria-label="Storm timer">
+            <svg viewBox="0 0 16 16" aria-hidden="true">
+              <circle
+                cx="8"
+                cy="8"
+                r="6.6"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.6"
+              />
+              <path
+                d="M8 4v4l2.4 1.5"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+              />
+            </svg>
+            <b id="storm-clock">1:00</b>
+          </span>
+          <span aria-label="Players remaining">
+            <svg viewBox="0 0 16 16" aria-hidden="true">
+              <circle cx="8" cy="4.5" r="3" />
+              <path d="M1.7 14c.2-3.4 2.8-5.7 6.3-5.7s6.1 2.3 6.3 5.7Z" />
+            </svg>
+            <b id="alive-count">12</b>
+          </span>
+          <span aria-label="Eliminations">
+            <svg viewBox="0 0 16 16" aria-hidden="true">
+              <circle
+                cx="8"
+                cy="8"
+                r="5.2"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+              />
+              <path
+                d="M8 .9v3m0 8.2v3M.9 8h3m8.2 0h3"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+              />
+            </svg>
+            <b id="kill-count">0</b>
+          </span>
         </div>
       </div>
       <div id="feed"></div>
@@ -95,7 +140,6 @@
           <i id="health-fill"></i><strong id="health-text">100</strong
           ><span>+</span>
         </div>
-        <div class="stamina"><i id="stamina-fill"></i></div>
       </div>
       <div id="combat-panel">
         <div id="materials"></div>
