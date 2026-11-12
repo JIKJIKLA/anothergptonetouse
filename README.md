@@ -8,8 +8,10 @@ On Chromebooks, open the game in Chrome with WebGL2 and select Graphics → Auto
 
 WASD moves. Mouse looks. Left click fires, uses the selected heal or places a build. Right click aims. Shift sprints, Ctrl crouches and Space jumps, drops or deploys the glider. E searches or picks up, Shift+E swaps and X drops the selected item. R reloads and 1–6 select slots. Q toggles building and F1–F4 select wall, floor, ramp and cone. F edits, 1–9 toggle wall tiles and Enter confirms. Shift+F resets the edit and V changes material. Escape pauses. If mouse capture is unavailable, middle drag or Alt+drag looks around.
 
-The island uses the supplied location meshes and textures, with connected roads and traversable interiors. Selected roof and wall panels can be broken. The environment files total 129.6 MB before HTTP compression. Additional outfits load on selection. Matches run offline. [Credits](CREDITS.md).
+The island uses the supplied location meshes and textures, with connected roads and traversable interiors. The environment files total 131.0 MB before HTTP compression. Additional outfits load on selection. Matches run offline. [Credits](CREDITS.md).
 
 The Season 5 art pass adds wooded ridges and a more varied shoreline around the three locations, closer third-person and aim cameras, cooler shadows and the original Tilted Towers treasure chest. The glider and character poses were revised alongside gun input, build alignment and the HUD.
+
+The harvesting update makes more than 5,700 building pieces, vehicles, props, trees, rocks, and shrubs breakable. Use the pickaxe to collect wood, stone, or metal and aim for the blue weak point. The update also restores missing outfit material assignments, pavement textures, car paint, grass cutouts, and rock color.
 
 This directory contains the prebuilt client and its required runtime files. It requires no server, accounts or package installation. The editable Vite project and source archive are maintained separately.
