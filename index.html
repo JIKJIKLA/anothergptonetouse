@@ -7,60 +7,162 @@
     <title>NIVET ROYALE</title>
     <meta
       name="description"
-      content="A local solo battle royale. Drop, loot, build, survive."
+      content="A Chapter 1 battle royale with classic building and offline matches."
     />
     <link
       rel="icon"
       href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230c4ea1'/%3E%3Ctext x='11' y='48' font-family='Arial' font-weight='900' font-size='44' fill='%23ffe456'%3EN%3C/text%3E%3C/svg%3E"
     />
-    <script type="module" crossorigin src="./assets/index-DFN24hRa.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-DU-0pzHr.css">
+    <script type="module" crossorigin src="./assets/index-CcJukOun.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-BzqLoNDX.css">
   </head>
   <body>
     <canvas id="game" aria-label="Nivet Royale 3D game"></canvas>
-    <div id="loading">
-      <div class="wordmark">NIVET <span>ROYALE</span></div>
-      <p id="load-label">Preparing the island…</p>
-      <div class="load-track"><i id="load-progress"></i></div>
+    <div id="loading" class="chapter-splash" role="status" aria-live="polite">
+      <div class="splash-art" aria-hidden="true"></div>
+      <div class="splash-copy">
+        <div class="chapter-wordmark">NIVET <span>ROYALE</span></div>
+        <strong class="splash-season">CHAPTER 1 · SEASON 5</strong>
+        <h1>WORLDS<br />COLLIDE</h1>
+      </div>
+      <div class="splash-loading">
+        <p id="load-label">Preparing the island…</p>
+        <progress
+          id="load-progress"
+          max="100"
+          value="2"
+          aria-label="Island loading progress"
+        ></progress>
+      </div>
     </div>
-    <div id="lobby" class="screen hidden">
+    <div id="chapter-start" class="chapter-splash screen hidden">
+      <div class="splash-art" aria-hidden="true"></div>
+      <div class="splash-copy">
+        <div class="chapter-wordmark">NIVET <span>ROYALE</span></div>
+        <strong class="splash-season">CHAPTER 1 · SEASON 5</strong>
+        <h1>WORLDS<br />COLLIDE</h1>
+        <button id="chapter-continue" class="chapter-yellow">
+          CONTINUE <kbd>Enter</kbd>
+        </button>
+      </div>
+      <div class="splash-caption">OFFLINE PLAY</div>
+    </div>
+    <div id="lobby" class="screen hidden" data-tab="play">
       <header>
-        <a class="brand" href="#">NIVET<span>ROYALE</span></a>
-        <nav>
-          <span class="active">PLAY</span
-          ><button id="open-controls">CONTROLS</button
-          ><button id="open-settings">SETTINGS</button>
+        <div class="chapter-wordmark">NIVET<span>ROYALE</span></div>
+        <nav aria-label="Main menu">
+          <button id="lobby-play-tab" aria-current="page">PLAY</button>
+          <button id="lobby-locker-tab">LOCKER</button>
+          <button id="open-controls">CONTROLS</button>
+          <button id="open-settings">SETTINGS</button>
         </nav>
-        <span class="local-badge">SOLO · OFFLINE</span>
+        <span class="local-badge">OFFLINE</span>
       </header>
-      <div class="lobby-content">
-        <div class="eyebrow">CHAPTER 1 · SEASON 5</div>
-        <h1>TILTED<br /><em>TOWERS</em></h1>
-        <p>
-          Land on a roof, loot the block,<br />and build through the final
-          circle.
-        </p>
-        <div class="mode-card">
-          <span>01 / CLASSIC</span>
-          <h2>SOLO BATTLE ROYALE</h2>
-          <p>You + 11 bots · Three landing areas</p>
-          <button id="play-solo" class="primary">LET’S DROP <b>→</b></button
-          ><button id="play-practice" class="secondary">
-            PRACTICE DISTRICT <small>Choose a starting point</small>
+      <main id="lobby-play">
+        <div class="chapter-heading">
+          <h1>CHAPTER 1</h1>
+          <strong>SEASON 5</strong>
+        </div>
+        <aside class="lobby-island" aria-label="The island">
+          <h2>THE ISLAND</h2>
+          <canvas
+            id="lobby-map"
+            width="320"
+            height="320"
+            aria-label="Map of the three playable districts"
+          ></canvas>
+          <ul>
+            <li>Tilted Towers</li>
+            <li>Retail Row</li>
+            <li>Lazy Links</li>
+          </ul>
+          <div class="practice-actions">
+            <button id="play-practice">PRACTICE DISTRICT</button>
+          </div>
+        </aside>
+        <div class="lobby-player">
+          <strong>NIVET</strong>
+          <span>Not Ready</span>
+        </div>
+        <div class="lobby-actions">
+          <span>GAME MODE</span>
+          <h2 id="lobby-mode-name">SOLO</h2>
+          <p id="lobby-mode-summary">12 players · Free for all</p>
+          <button
+            id="open-playlists"
+            class="chapter-secondary"
+            aria-haspopup="dialog"
+          >
+            CHANGE MODE
+          </button>
+          <button
+            id="play-solo"
+            class="chapter-yellow"
+            data-mode="solo"
+            data-side="te"
+          >
+            PLAY
           </button>
         </div>
-      </div>
-      <div class="lobby-location">
-        <span>THE ISLAND</span><strong>TILTED TOWERS</strong>
-        <p>Retail Row · Lazy Links</p>
-      </div>
+      </main>
+      <main id="lobby-locker" class="hidden">
+        <div class="locker-preview-hint" aria-hidden="true">
+          ← → &nbsp; TURN OUTFIT
+        </div>
+        <button
+          id="turn-outfit-left"
+          class="locker-turn"
+          aria-label="Turn outfit left"
+        >
+          ‹
+        </button>
+        <button
+          id="turn-outfit-right"
+          class="locker-turn"
+          aria-label="Turn outfit right"
+        >
+          ›
+        </button>
+      </main>
       <footer>
-        <span>SEASON 5 INSPIRED · COMPACT SOLO</span
-        ><span
+        <span id="chapter-footer-left">BATTLE ROYALE</span>
+        <span id="chapter-footer-right"
           >WASD MOVE &nbsp; · &nbsp; MOUSE AIM &nbsp; · &nbsp; Q BUILD</span
         >
       </footer>
     </div>
+    <dialog id="playlist-dialog" aria-labelledby="playlist-heading">
+      <div class="playlist-layout">
+        <section>
+          <h2 id="playlist-heading">CHOOSE GAME MODE</h2>
+          <div
+            class="playlist-cards"
+            id="playlist-cards"
+            aria-label="Game modes"
+          ></div>
+        </section>
+        <section class="playlist-details" aria-label="Selected mode">
+          <h2 id="playlist-title">SOLO</h2>
+          <p id="playlist-description"></p>
+          <div id="playlist-party" aria-label="Party sizes"></div>
+          <div
+            id="playlist-sides"
+            class="hidden"
+            aria-label="50 versus 50 side"
+          >
+            <strong>CHOOSE YOUR SIDE</strong>
+            <button type="button" data-side="te">TE</button>
+            <button type="button" data-side="vin">VIN</button>
+          </div>
+          <div class="playlist-buttons">
+            <button id="playlist-cancel" class="chapter-secondary">
+              CANCEL <kbd>Esc</kbd>
+            </button>
+            <button id="playlist-accept" class="chapter-yellow">ACCEPT</button>
+          </div>
+        </section>
+      </div>
+    </dialog>
     <div id="hud" class="hidden">
       <div id="compass"></div>
       <div class="match-info">
