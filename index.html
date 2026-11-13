@@ -13,8 +13,8 @@
       rel="icon"
       href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230c4ea1'/%3E%3Ctext x='11' y='48' font-family='Arial' font-weight='900' font-size='44' fill='%23ffe456'%3EN%3C/text%3E%3C/svg%3E"
     />
-    <script type="module" crossorigin src="./assets/index-CadfKWqS.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-BzqLoNDX.css">
+    <script type="module" crossorigin src="./assets/index-DRFFX2IP.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-CGDLqLkb.css">
   </head>
   <body>
     <canvas id="game" aria-label="Nivet Royale 3D game"></canvas>
@@ -33,6 +33,22 @@
           value="2"
           aria-label="Island loading progress"
         ></progress>
+      </div>
+    </div>
+    <div
+      id="game-status"
+      class="modal hidden"
+      aria-labelledby="game-status-title"
+    >
+      <div class="modal-card">
+        <h2 id="game-status-title" role="status" aria-live="polite"></h2>
+        <p id="game-status-detail"></p>
+        <button id="game-status-retry" class="primary hidden">
+          RELOAD IN COMPATIBILITY MODE
+        </button>
+        <button id="game-status-lobby" class="secondary hidden">
+          RETURN TO LOBBY
+        </button>
       </div>
     </div>
     <div id="chapter-start" class="chapter-splash screen hidden">
@@ -279,8 +295,10 @@
               <option value="auto">Auto · adapts resolution</option>
               <option value="low">Low · performance</option>
               <option value="medium">Medium · balanced</option>
-              <option value="high">High · detail</option>
-            </select></label
+              <option value="high">High · detail</option></select
+            ><small id="graphics-profile-note" class="hidden"
+              >Compatibility graphics are active.</small
+            ></label
           ><label
             >Bot difficulty<select id="difficulty">
               <option value="easy">Easy</option>
